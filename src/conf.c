@@ -71,6 +71,7 @@ typedef enum {
 	oGatewayName,
 	oGatewayInterface,
 	oGatewayInterfaceExtra,
+	oGatewayInterfaceExtra2,
 	oGatewayIPRange,
 	oGatewayAddress,
 	oGatewayPort,
@@ -130,6 +131,7 @@ static const struct {
 	{ "gatewayname", oGatewayName },
 	{ "gatewayinterface", oGatewayInterface },
 	{ "gatewayinterfaceextra", oGatewayInterfaceExtra },
+	{ "gatewayinterfaceextra2", oGatewayInterfaceExtra2 },
 	{ "gatewayiprange", oGatewayIPRange },
 	{ "gatewayaddress", oGatewayAddress },
 	{ "gatewayport", oGatewayPort },
@@ -212,6 +214,7 @@ config_init(void)
 	config.gw_name = safe_strdup(DEFAULT_GATEWAYNAME);
 	config.gw_interface = NULL;
 	config.gw_interface_extra = NULL;
+	config.gw_interface_extra2 = NULL;
 	config.gw_iprange = safe_strdup(DEFAULT_GATEWAY_IPRANGE);
 	config.gw_address = NULL;
 	config.gw_port = DEFAULT_GATEWAYPORT;
@@ -740,6 +743,9 @@ config_read(const char *filename)
 			break;
 		case oGatewayInterfaceExtra:
 			config.gw_interface_extra = safe_strdup(p1);
+			break;
+		case oGatewayInterfaceExtra2:
+			config.gw_interface_extra2 = safe_strdup(p1);
 			break;
 		case oGatewayIPRange:
 			config.gw_iprange = safe_strdup(p1);

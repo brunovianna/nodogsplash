@@ -151,6 +151,7 @@ typedef struct {
 	char *gw_name;			/**< @brief Name of the gateway; e.g. its SSID */
 	char *gw_interface;		/**< @brief Interface we will manage */
 	char *gw_interface_extra;	/**< @brief Extra interface we will manage */
+	char *gw_interface_extra2;	/**< @brief Extra2 interface we will manage */
 	char *gw_iprange;		/**< @brief IP range on gw_interface we will manage */
 	char *gw_address;		/**< @brief Internal IP address for our web server */
 	char *gw_mac;			/**< @brief MAC address of the interface we manage */
